@@ -1,0 +1,18 @@
+{
+  "name": "alex/hexlet-p",
+  "description": "First project by Hexlet",
+  "authors": [
+    {
+      "name": "alexmixaylov",
+      "email": "alexmixaylov@gmail.com"
+    }
+  ],
+  "require": {
+
+  },
+  "require-dev": {
+  },
+  "bin": [
+    "bin/brain-games"
+  ]
+}
