@@ -7,18 +7,20 @@
       "email": "alexmixaylov@gmail.com"
     }
   ],
+  "scripts": {
+    "phpcs": "phpcs -- --standard=PSR12 src bin"
+  },
   "require": {
     "wp-cli/php-cli-tools": "^0.11.11"
   },
   "require-dev": {
-
+    "squizlabs/php_codesniffer": "^3.5"
   },
   "bin": [
     "bin/brain-games"
   ],
   "autoload": {
     "psr-4": {
-
     },
     "files": [
       "src/Cli.php"
