@@ -7,3 +7,7 @@ CodeClimate
 TRAVIS
 -------
 [![Build Status](https://travis-ci.org/alexmixaylov/php-project-lvl1.svg?branch=master)](https://travis-ci.org/alexmixaylov/php-project-lvl1)
+
+INSTALL
+---------
+[![asciicast](https://asciinema.org/a/8zKic30vakA9WOhWVUA07Ov8P.png)](https://asciinema.org/a/8zKic30vakA9WOhWVUA07Ov8P)
