@@ -10,4 +10,6 @@ TRAVIS
 
 INSTALL
 ---------
-[![asciicast](https://asciinema.org/a/8zKic30vakA9WOhWVUA07Ov8P.png)](https://asciinema.org/a/8zKic30vakA9WOhWVUA07Ov8P)
+
+[![asciicast](https://asciinema.org/a/8zKic30vakA9WOhWVUA07Ov8P.svg)](https://asciinema.org/a/8zKic30vakA9WOhWVUA07Ov8P)
+

@@ -22,10 +22,12 @@
   ],
   "autoload": {
     "psr-4": {
+      "BrainGames\\": "src/"
     },
     "files": [
-      "src/Cli.php",
-      "src/Even.php"
+      "src/games/cli.php",
+      "src/games/even.php",
+      "src/games/common.php"
     ]
   }
 }

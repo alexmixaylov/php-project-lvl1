@@ -1,15 +1,16 @@
 <?php
 
-namespace BrainGames\Even;
+namespace BrainGames\games\even;
 
 use function cli\line;
 use function cli\prompt;
+use function BrainGames\games\common\timesToWin;
+use function BrainGames\games\common\greetAndGetName;
 
-const TIMES_TO_WIN = 3;
+$userName1    = greetAndGetName();
 
 function run()
 {
-    line("%s", TIMES_TO_WIN);
     $count       = 0;
     $userName    = greetAndGetName();
     $askQuestion = function ($number, $userName) use ($count) {
@@ -35,10 +36,10 @@ function run()
     do {
         $pass = $askQuestion(getRandomNumber(), $userName);
         $count++;
-        if ($count == TIMES_TO_WIN){
+        if ($count == timesToWin()) {
             line('Congratulations, %s!', $userName);
         }
-    } while ($count < TIMES_TO_WIN && $pass);
+    } while ($count < timesToWin() && $pass);
 
 
 }
@@ -58,13 +59,4 @@ function getRandomNumber()
     return rand(1, 100);
 }
 
-function greetAndGetName()
-{
-    line('Welcome to Brain Games!');
-    line('Answer "yes" if the number is even, otherwise answer "no".');
 
-    $name = prompt("\nMay I have your name?");
-    line("Hello, %s!\n", $name);
-
-    return $name;
-}
