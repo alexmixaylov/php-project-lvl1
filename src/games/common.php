@@ -47,8 +47,6 @@ function play($rules, $round, $userName)
     $nextStep = true;
     do {
         $roundResult = $round($rules());
-        //TODO неправильно работает сравнение чисел в строковом формате
-        // если привести к числовому типу, тогда теряется универсальность
         $userAnswer  = $roundResult['userAnswer'];
         $rightAnswer = $roundResult['rightAnswer'];
 

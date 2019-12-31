@@ -30,8 +30,8 @@ function run()
 
     $round    = function ($rules) {
         $question    = $rules['question'];
-        $userAnswer  = makeQuestion($question);
-        $rightAnswer = $rules['answer'];
+        $userAnswer  = (int) makeQuestion($question);
+        $rightAnswer = (int) $rules['answer'];
 
         return [
             'question' => $question,
