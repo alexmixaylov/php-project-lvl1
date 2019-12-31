@@ -27,7 +27,8 @@
     "files": [
       "src/games/cli.php",
       "src/games/even.php",
-      "src/games/common.php"
+      "src/games/common.php",
+      "src/games/calc.php"
     ]
   }
 }
