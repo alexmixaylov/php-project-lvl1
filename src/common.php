@@ -61,10 +61,7 @@ function play($rules, $userName)
         if ($count == TIMES_TO_WIN && $nextStep) {
             line('Congratulations, %s!', $userName);
         }
-
     } while ($count < TIMES_TO_WIN && $nextStep);
-
-
 }
 
 function makeResponse($question, $answer): array

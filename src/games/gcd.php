@@ -19,13 +19,13 @@ function run()
         $answer = nodCalc($number1, $number2);
 
         return makeResponse($question, $answer);
-
     };
 
     play($rules, $userName);
 }
 
-function nodCalc($x, $y) {
+function nodCalc($x, $y)
+{
     if ($x > $y) {
         return nodCalc(($x - $y), $y);
     }

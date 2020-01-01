@@ -24,8 +24,6 @@ function run()
         $answer      = eval('return ' . $operand1 . $operator . $operand2 . ';');
 
         return makeResponse($question, $answer);
-
     };
-
     play($rules, $userName);
 }

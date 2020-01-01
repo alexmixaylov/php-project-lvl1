@@ -25,7 +25,7 @@ function run()
 
 function isPrime($num)
 {
-    if($num == 2){
+    if ($num == 2) {
         return true;
     }
 
