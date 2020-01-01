@@ -12,8 +12,8 @@ function run()
     $userName = greetAndGetUsername('Find the greatest common divisor of given numbers.');
 
     $rules = function () {
-        $number1  = getRandomNumber(50);
-        $number2  = getRandomNumber(100);
+        $number1  = getRandomNumber(10);
+        $number2  = getRandomNumber(20);
         $question = "{$number1} {$number2}";
 
         $answer = nodCalc($number1, $number2);

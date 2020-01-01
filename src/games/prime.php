@@ -12,7 +12,7 @@ function run()
     $userName = greetAndGetUsername('Answer "yes" if given number is prime. Otherwise answer "no".');
 
     $rules = function () {
-        $number   = getRandomNumber(13);
+        $number   = getRandomNumber(59);
         $question = $number;
         $isPrime  = isPrime($number);
         $answer   = $isPrime ? 'yes' : 'no';
@@ -25,7 +25,9 @@ function run()
 
 function isPrime($num)
 {
-    if ($num == 2) {
+    $minPrimeNumber = 2;
+
+    if ($num == $minPrimeNumber) {
         return true;
     }
 
