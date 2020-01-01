@@ -38,25 +38,19 @@ function gameOver($userName, $userAnswer, $rightAnswer)
 
 function play($rules, $userName)
 {
-    $round    = function ($rules) {
-
-        $question    = $rules['question'];
-        $userAnswer  = makeQuestion($question);
-        $rightAnswer = $rules['answer'];
-
-        return [
-            'question'    => $question,
-            'userAnswer'  => $userAnswer,
-            'rightAnswer' => $rightAnswer
-        ];
+    $doStep = function ($rules) {
+        $userAnswer = makeQuestion($rules['question']);
+        $rules['userAnswer'] = $userAnswer;
+        return $rules;
     };
 
     $count    = 0;
     $nextStep = true;
+
     do {
-        $roundResult = $round($rules());
-        $userAnswer  = $roundResult['userAnswer'];
-        $rightAnswer = $roundResult['rightAnswer'];
+        $getStepResult = $doStep($rules());
+        $userAnswer  = $getStepResult['userAnswer'];
+        $rightAnswer = $getStepResult['rightAnswer'];
 
         if ($userAnswer !== $rightAnswer) {
             gameOver($userName, $userAnswer, $rightAnswer);
@@ -76,7 +70,7 @@ function play($rules, $userName)
 function makeResponse($question, $answer): array
 {
     return [
-        'question' => $question,
-        'answer'   => (string)$answer
+        'question'    => $question,
+        'rightAnswer' => (string)$answer
     ];
 }
