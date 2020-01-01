@@ -7,10 +7,10 @@ use function cli\prompt;
 
 const TIMES_TO_WIN = 3;
 
-function greetAndGetUsername()
+function greetAndGetUsername($conditions)
 {
     line('Welcome to Brain Games!');
-    line('Answer "yes" if the number is even, otherwise answer "no".');
+    line($conditions);
 
     $name = prompt("\nMay I have your name?");
     line("Hello, %s!\n", $name);
@@ -18,14 +18,9 @@ function greetAndGetUsername()
     return $name;
 }
 
-function getTimesToWin()
+function getRandomNumber($max = 10)
 {
-    return TIMES_TO_WIN;
-}
-
-function getRandomNumber()
-{
-    return rand(1, 10);
+    return rand(1, $max);
 }
 
 function makeQuestion($question)
@@ -41,9 +36,23 @@ function gameOver($userName, $userAnswer, $rightAnswer)
     line("Let's try again, %s!", $userName);
 }
 
-function play($rules, $round, $userName)
+function play($rules, $userName)
 {
-    $count = 0;
+    $round    = function ($rules) {
+        $question    = $rules['question'];
+        $userAnswer  = makeQuestion($question);
+        $rightAnswer = $rules['answer'];
+
+        //line('Rules $question %s', print_r($question));
+
+        return [
+            'question'    => $question,
+            'userAnswer'  => $userAnswer,
+            'rightAnswer' => $rightAnswer
+        ];
+    };
+
+    $count    = 0;
     $nextStep = true;
     do {
         $roundResult = $round($rules());
@@ -61,4 +70,6 @@ function play($rules, $round, $userName)
         }
 
     } while ($count < TIMES_TO_WIN && $nextStep);
+
+
 }

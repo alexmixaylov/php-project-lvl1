@@ -4,14 +4,14 @@ namespace BrainGames\games\even;
 
 use function BrainGames\games\common\greetAndGetUsername;
 use function BrainGames\games\common\getRandomNumber;
-use function BrainGames\games\common\makeQuestion;
 use function BrainGames\games\common\play;
+use function cli\line;
 
 
 function run()
 {
 
-    $userName   = greetAndGetUsername();
+    $userName   = greetAndGetUsername('Answer "yes" if the number is even, otherwise answer "no".');
 
     $rules = function () {
         $question = getRandomNumber();
@@ -24,20 +24,9 @@ function run()
 
     };
 
-    $round = function ($rules) {
-        $question    = $rules['question'];
-        $userAnswer  = makeQuestion($question);
-        $rightAnswer = $rules['answer'];
 
-        return [
-            'question' => $question,
-            'userAnswer' => $userAnswer,
-            'rightAnswer' => $rightAnswer
-        ];
 
-    };
-
-    play($rules, $round, $userName);
+    play($rules, $userName);
 
 }
 

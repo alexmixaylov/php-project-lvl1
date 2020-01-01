@@ -4,14 +4,14 @@ namespace BrainGames\games\calc;
 
 use function BrainGames\games\common\greetAndGetUsername;
 use function BrainGames\games\common\getRandomNumber;
-use function BrainGames\games\common\makeQuestion;
 use function BrainGames\games\common\play;
+use function cli\line;
 
 function run()
 {
-    $userName = greetAndGetUsername();
+    $userName = greetAndGetUsername('What is the result of the expression?');
 
-    $rules    = function () {
+    $rules = function () {
         $getOperator = function () {
             $index = rand(0, 2);
 
@@ -24,21 +24,9 @@ function run()
 
         return [
             'question' => "{$operand1} {$operator} {$operand2}",
-            'answer'   => $answer
+            'answer'   => (string)$answer
         ];
     };
 
-    $round    = function ($rules) {
-        $question    = $rules['question'];
-        $userAnswer  = (int) makeQuestion($question);
-        $rightAnswer = (int) $rules['answer'];
-
-        return [
-            'question' => $question,
-            'userAnswer' => $userAnswer,
-            'rightAnswer' => $rightAnswer
-        ];
-    };
-
-    play($rules, $round, $userName);
+    play($rules, $userName);
 }
