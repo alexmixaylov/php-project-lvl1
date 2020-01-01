@@ -2,9 +2,9 @@
 
 namespace BrainGames\games\cli;
 
-use function BrainGames\games\common\greetAndGetUsername;
+use function BrainGames\common\greetAndGetUsername;
 
 function run()
 {
-    greetAndGetUsername();
+    greetAndGetUsername('');
 }

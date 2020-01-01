@@ -1,6 +1,10 @@
 {
   "name": "alexmixaylov/hexlet-p",
   "description": "First project by Hexlet",
+  "keywords": [
+    "hexlet project",
+    "training php project"
+  ],
   "authors": [
     {
       "name": "alexmixaylov",
@@ -25,9 +29,9 @@
       "BrainGames\\": "src/"
     },
     "files": [
+      "src/common.php",
       "src/games/cli.php",
       "src/games/even.php",
-      "src/games/common.php",
       "src/games/calc.php",
       "src/games/gcd.php",
       "src/games/progression.php",

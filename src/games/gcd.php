@@ -2,10 +2,10 @@
 
 namespace BrainGames\games\gcd;
 
-use function BrainGames\games\common\greetAndGetUsername;
-use function BrainGames\games\common\getRandomNumber;
-use function BrainGames\games\common\makeResponse;
-use function BrainGames\games\common\play;
+use function BrainGames\common\greetAndGetUsername;
+use function BrainGames\common\getRandomNumber;
+use function BrainGames\common\makeResponse;
+use function BrainGames\common\play;
 
 function run()
 {
