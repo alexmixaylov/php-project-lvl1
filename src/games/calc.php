@@ -4,8 +4,8 @@ namespace BrainGames\games\calc;
 
 use function BrainGames\games\common\greetAndGetUsername;
 use function BrainGames\games\common\getRandomNumber;
+use function BrainGames\games\common\makeResponse;
 use function BrainGames\games\common\play;
-use function cli\line;
 
 function run()
 {
@@ -20,12 +20,11 @@ function run()
         $operator    = $getOperator();
         $operand1    = getRandomNumber();
         $operand2    = getRandomNumber();
+        $question = "{$operand1} {$operator} {$operand2}";
         $answer      = eval('return ' . $operand1 . $operator . $operand2 . ';');
 
-        return [
-            'question' => "{$operand1} {$operator} {$operand2}",
-            'answer'   => (string)$answer
-        ];
+        return makeResponse($question, $answer);
+
     };
 
     play($rules, $userName);

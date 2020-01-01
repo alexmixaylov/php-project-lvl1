@@ -4,6 +4,7 @@ namespace BrainGames\games\gcd;
 
 use function BrainGames\games\common\greetAndGetUsername;
 use function BrainGames\games\common\getRandomNumber;
+use function BrainGames\games\common\makeResponse;
 use function BrainGames\games\common\play;
 
 function run()
@@ -17,10 +18,7 @@ function run()
 
         $answer = nodCalc($number1, $number2);
 
-        return [
-            'question' => $question,
-            'answer'   => (string)$answer
-        ];
+        return makeResponse($question, $answer);
 
     };
 

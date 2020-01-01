@@ -39,11 +39,10 @@ function gameOver($userName, $userAnswer, $rightAnswer)
 function play($rules, $userName)
 {
     $round    = function ($rules) {
+
         $question    = $rules['question'];
         $userAnswer  = makeQuestion($question);
         $rightAnswer = $rules['answer'];
-
-        //line('Rules $question %s', print_r($question));
 
         return [
             'question'    => $question,
@@ -72,4 +71,12 @@ function play($rules, $userName)
     } while ($count < TIMES_TO_WIN && $nextStep);
 
 
+}
+
+function makeResponse($question, $answer): array
+{
+    return [
+        'question' => $question,
+        'answer'   => (string)$answer
+    ];
 }
