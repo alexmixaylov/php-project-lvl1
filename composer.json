@@ -25,9 +25,6 @@
     "bin/brain-even"
   ],
   "autoload": {
-    "psr-4": {
-      "BrainGames\\": "src/"
-    },
     "files": [
       "src/common.php",
       "src/games/cli.php",

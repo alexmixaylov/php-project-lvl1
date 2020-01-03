@@ -20,7 +20,7 @@ function run()
         $operator    = $getOperator();
         $operand1    = getRandomNumber();
         $operand2    = getRandomNumber();
-        $question = "{$operand1} {$operator} {$operand2}";
+        $question    = "{$operand1} {$operator} {$operand2}";
         $answer      = eval('return ' . $operand1 . $operator . $operand2 . ';');
 
         return makeResponse($question, $answer);
