@@ -7,17 +7,6 @@ use function cli\prompt;
 
 const TIMES_TO_WIN = 3;
 
-function greetAndGetUsername($conditions)
-{
-    line('Welcome to Brain Games!');
-    line($conditions);
-
-    $name = prompt("\nMay I have your name?");
-    line("Hello, %s!\n", $name);
-
-    return $name;
-}
-
 function getRandomNumber($max = 10)
 {
     return rand(1, $max);
