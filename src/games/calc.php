@@ -12,12 +12,7 @@ function run()
     $userName = greetAndGetUsername('What is the result of the expression?');
 
     $rules = function () {
-        $getOperator = function () {
-            $index = rand(0, 2);
-
-            return ['+', '-', '*'][$index];
-        };
-        $operator    = $getOperator();
+        $operator    = getOperator();
         $operand1    = getRandomNumber();
         $operand2    = getRandomNumber();
         $question    = "{$operand1} {$operator} {$operand2}";
@@ -26,4 +21,11 @@ function run()
         return makeResponse($question, $answer);
     };
     play($rules, $userName);
+}
+
+function getOperator()
+{
+    $operators = ['+', '-', '*'];
+    $maxIndex = count($operators) - 1;
+    return $operators[rand(0, $maxIndex)];
 }
