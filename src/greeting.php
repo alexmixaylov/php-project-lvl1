@@ -13,6 +13,6 @@ function init($game, $gameDescription)
     $name = prompt("\nMay I have your name?");
     line("Hello, %s!\n", $name);
 
-    $gameFunction = "\\BrainGames\\games\\{$game}\\run";
-    $gameFunction($name);
+    $runGame = "\\BrainGames\\games\\{$game}\\run";
+    $runGame($name);
 }
