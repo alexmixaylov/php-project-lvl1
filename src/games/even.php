@@ -2,7 +2,6 @@
 
 namespace BrainGames\games\even;
 
-//use function BrainGames\common\greetAndGetUsername;
 use function BrainGames\common\getRandomNumber;
 use function BrainGames\common\makeResponse;
 use function BrainGames\common\play;
