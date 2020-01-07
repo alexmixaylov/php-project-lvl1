@@ -9,30 +9,28 @@ use function BrainGames\common\play;
 function run($userName)
 {
     $rules = function () {
-        $number   = getRandomNumber(59);
-        $question = $number;
-        $isPrime  = isPrime($number);
-        $answer   = $isPrime ? 'yes' : 'no';
+        $question = getRandomNumber(13);
+        $answer   = isPrime($question) ? 'yes' : 'no';
 
         return makeResponse($question, $answer);
     };
-
     play($rules, $userName);
 }
 
 function isPrime($num)
 {
     $minPrimeNumber = 2;
+    $maxPrimeNumber = $num / 2;
 
-    if ($num == $minPrimeNumber) {
+    if ($num === $minPrimeNumber) {
         return true;
     }
 
-    if ($num % 2 == 0 || $num == 1) {
+    if ($num % 2 == 0 || $num < $minPrimeNumber) {
         return false;
     }
 
-    for ($d = 3; $d < $num; $d = $d + 2) {
+    for ($d = $minPrimeNumber + 1, $period = 2; $d < $maxPrimeNumber; $d = $d + $period) {
         if ($num % $d == 0) {
             return false;
         }

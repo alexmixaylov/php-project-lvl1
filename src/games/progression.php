@@ -5,20 +5,16 @@ namespace BrainGames\games\progression;
 use function BrainGames\common\getRandomNumber;
 use function BrainGames\common\makeResponse;
 use function BrainGames\common\play;
+use function cli\line;
 
 function run($userName)
 {
     $rules = function () {
-        $progrDifference    = getRandomNumber(20);
+        $progrDifference    = getRandomNumber(5);
         $lenghtProgression  = 10;
         $hiddenElementIndex = getRandomNumber() - 1;
-        $startProgression   = getRandomNumber();
 
-        $progression = createProgression(
-            $startProgression,
-            $progrDifference,
-            $lenghtProgression
-        );
+        $progression = createProgression($progrDifference, $lenghtProgression);
         $question    = createQuestion($progression, $hiddenElementIndex);
         $answer      = $progression[$hiddenElementIndex];
 
@@ -28,12 +24,17 @@ function run($userName)
     play($rules, $userName);
 }
 
-function createProgression($start, $diff, $lenght): array
+function createProgression(int $diff, int $lenght): array
 {
-    $result = [$start];
-    for ($i = 1; $i < $lenght; $i++) {
-        $result[$i] = $result[$i - 1] + $diff;
-    }
+    $result = [];
+    $item   = getRandomNumber(10);
+    $index  = 0;
+
+    do {
+        $item           = $item + $diff;
+        $result[$index] = $item;
+        $index++;
+    } while ($index < $lenght);
 
     return $result;
 }

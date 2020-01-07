@@ -10,10 +10,14 @@ function run($userName)
 {
     $rules = function () {
         $question = getRandomNumber();
-        $isEven = $question % 2 == 0;
-        $answer = $isEven ? 'yes' : 'no';
+        $answer = isEven($question) ? 'yes' : 'no';
 
         return makeResponse($question, $answer);
     };
     play($rules, $userName);
+}
+
+function isEven(int $number)
+{
+    return $number % 2 == 0;
 }
