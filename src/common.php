@@ -25,6 +25,14 @@ function gameOver($userName, $userAnswer, $rightAnswer)
     line("Let's try again, %s!", $userName);
 }
 
+function makeResponse($question, $answer): array
+{
+    return [
+        'question'    => $question,
+        'rightAnswer' => (string)$answer
+    ];
+}
+
 function play($rules, $userName)
 {
     $doStep = function ($rules) {
@@ -51,12 +59,4 @@ function play($rules, $userName)
             line('Congratulations, %s!', $userName);
         }
     } while ($count < TIMES_TO_WIN && $nextStep);
-}
-
-function makeResponse($question, $answer): array
-{
-    return [
-        'question'    => $question,
-        'rightAnswer' => (string)$answer
-    ];
 }

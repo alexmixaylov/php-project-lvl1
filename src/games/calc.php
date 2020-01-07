@@ -2,15 +2,12 @@
 
 namespace BrainGames\games\calc;
 
-use function BrainGames\common\greetAndGetUsername;
 use function BrainGames\common\getRandomNumber;
 use function BrainGames\common\makeResponse;
 use function BrainGames\common\play;
 
-function run()
+function run($userName)
 {
-    $userName = greetAndGetUsername('What is the result of the expression?');
-
     $rules = function () {
         $operator    = getOperator();
         $operand1    = getRandomNumber();

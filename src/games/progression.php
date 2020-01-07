@@ -2,24 +2,25 @@
 
 namespace BrainGames\games\progression;
 
-use function BrainGames\common\greetAndGetUsername;
 use function BrainGames\common\getRandomNumber;
 use function BrainGames\common\makeResponse;
 use function BrainGames\common\play;
 
-function run()
+function run($userName)
 {
-    $userName = greetAndGetUsername('What number is missing in the progression?');
-
     $rules = function () {
         $progrDifference    = getRandomNumber(20);
         $lenghtProgression  = 10;
         $hiddenElementIndex = getRandomNumber() - 1;
         $startProgression   = getRandomNumber();
 
-        $progression = createProgression($startProgression, $progrDifference, $lenghtProgression);
-        $question = createQuestion($progression, $hiddenElementIndex);
-        $answer = $progression[$hiddenElementIndex];
+        $progression = createProgression(
+            $startProgression,
+            $progrDifference,
+            $lenghtProgression
+        );
+        $question    = createQuestion($progression, $hiddenElementIndex);
+        $answer      = $progression[$hiddenElementIndex];
 
         return makeResponse($question, $answer);
     };

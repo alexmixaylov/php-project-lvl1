@@ -2,15 +2,12 @@
 
 namespace BrainGames\games\gcd;
 
-use function BrainGames\common\greetAndGetUsername;
 use function BrainGames\common\getRandomNumber;
 use function BrainGames\common\makeResponse;
 use function BrainGames\common\play;
 
-function run()
+function run($userName)
 {
-    $userName = greetAndGetUsername('Find the greatest common divisor of given numbers.');
-
     $rules = function () {
         $number1  = getRandomNumber(10);
         $number2  = getRandomNumber(20);

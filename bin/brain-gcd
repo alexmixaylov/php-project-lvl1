@@ -2,6 +2,8 @@
 
 <?php
 require_once '__DIR__/../vendor/autoload.php';
+$game = 'gcd';
+$gameDescription = 'Find the greatest common divisor of given numbers.';
 
-BrainGames\games\gcd\run();
+BrainGames\greeting\init($game, $gameDescription);
 

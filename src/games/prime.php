@@ -2,15 +2,12 @@
 
 namespace BrainGames\games\prime;
 
-use function BrainGames\common\greetAndGetUsername;
 use function BrainGames\common\getRandomNumber;
 use function BrainGames\common\makeResponse;
 use function BrainGames\common\play;
 
-function run()
+function run($userName)
 {
-    $userName = greetAndGetUsername('Answer "yes" if given number is prime. Otherwise answer "no".');
-
     $rules = function () {
         $number   = getRandomNumber(59);
         $question = $number;

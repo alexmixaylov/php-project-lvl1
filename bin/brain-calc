@@ -2,5 +2,7 @@
 
 <?php
 require_once '__DIR__/../vendor/autoload.php';
+$game = 'calc';
+$gameDescription = 'What is the result of the expression?';
 
-BrainGames\games\calc\run();
+BrainGames\greeting\init($game, $gameDescription);
