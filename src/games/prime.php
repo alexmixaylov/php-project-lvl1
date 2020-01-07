@@ -10,9 +10,9 @@ function run($userName)
 {
     $rules = function () {
         $question = getRandomNumber(13);
-        $answer   = isPrime($question) ? 'yes' : 'no';
+        $rightAnswer   = isPrime($question) ? 'yes' : 'no';
 
-        return makeResponse($question, $answer);
+        return makeResponse($question, $rightAnswer);
     };
     play($rules, $userName);
 }

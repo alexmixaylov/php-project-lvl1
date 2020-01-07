@@ -10,9 +10,9 @@ function run($userName)
 {
     $rules = function () {
         $question = getRandomNumber();
-        $answer = isEven($question) ? 'yes' : 'no';
+        $rightAnswer = isEven($question) ? 'yes' : 'no';
 
-        return makeResponse($question, $answer);
+        return makeResponse($question, $rightAnswer);
     };
     play($rules, $userName);
 }

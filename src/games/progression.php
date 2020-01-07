@@ -15,9 +15,9 @@ function run($userName)
 
         $progression = createProgression($diffProgression, $lengthProgression);
         $question    = createQuestion($progression, $hiddenElementIndex);
-        $answer      = $progression[$hiddenElementIndex];
+        $rightAnswer      = $progression[$hiddenElementIndex];
 
-        return makeResponse($question, $answer);
+        return makeResponse($question, $rightAnswer);
     };
 
     play($rules, $userName);

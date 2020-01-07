@@ -13,9 +13,9 @@ function run($userName)
         $number2  = getRandomNumber(20);
         $question = "{$number1} {$number2}";
 
-        $answer = nodCalc($number1, $number2);
+        $rightAnswer = nodCalc($number1, $number2);
 
-        return makeResponse($question, $answer);
+        return makeResponse($question, $rightAnswer);
     };
 
     play($rules, $userName);

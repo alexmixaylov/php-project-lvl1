@@ -13,9 +13,9 @@ function run($userName)
         $operand1    = getRandomNumber();
         $operand2    = getRandomNumber();
         $question    = "{$operand1} {$operator} {$operand2}";
-        $answer      = eval('return ' . $operand1 . $operator . $operand2 . ';');
+        $rightAnswer      = eval('return ' . $operand1 . $operator . $operand2 . ';');
 
-        return makeResponse($question, $answer);
+        return makeResponse($question, $rightAnswer);
     };
     play($rules, $userName);
 }
