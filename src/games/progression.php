@@ -5,16 +5,15 @@ namespace BrainGames\games\progression;
 use function BrainGames\common\getRandomNumber;
 use function BrainGames\common\makeResponse;
 use function BrainGames\common\play;
-use function cli\line;
 
 function run($userName)
 {
     $rules = function () {
-        $progrDifference    = getRandomNumber(5);
-        $lenghtProgression  = 10;
+        $diffProgression    = getRandomNumber(5);
+        $lengthProgression  = 10;
         $hiddenElementIndex = getRandomNumber() - 1;
 
-        $progression = createProgression($progrDifference, $lenghtProgression);
+        $progression = createProgression($diffProgression, $lengthProgression);
         $question    = createQuestion($progression, $hiddenElementIndex);
         $answer      = $progression[$hiddenElementIndex];
 
@@ -24,7 +23,7 @@ function run($userName)
     play($rules, $userName);
 }
 
-function createProgression(int $diff, int $lenght): array
+function createProgression(int $diff, int $length): array
 {
     $result = [];
     $item   = getRandomNumber(10);
@@ -34,15 +33,15 @@ function createProgression(int $diff, int $lenght): array
         $item           = $item + $diff;
         $result[$index] = $item;
         $index++;
-    } while ($index < $lenght);
+    } while ($index < $length);
 
     return $result;
 }
 
-function createQuestion($progression, $index): string
+function createQuestion(array $progression, int $index): string
 {
-    $placeholderLenght   = strlen((string)$progression[$index]);
-    $placeholder         = str_repeat('.', $placeholderLenght);
+    $placeholderLength   = strlen((string)$progression[$index]);
+    $placeholder         = str_repeat('.', $placeholderLength);
     $progression[$index] = $placeholder;
 
     return implode($progression, ' ');
