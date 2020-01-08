@@ -3,7 +3,7 @@
 namespace BrainGames\games\gcd;
 
 use function BrainGames\common\getRandomNumber;
-use function BrainGames\common\makeResponse;
+use function BrainGames\common\createResponse;
 use function BrainGames\common\play;
 
 function run($userName)
@@ -15,7 +15,7 @@ function run($userName)
 
         $rightAnswer = nodCalc($number1, $number2);
 
-        return makeResponse($question, $rightAnswer);
+        return createResponse($question, $rightAnswer);
     };
 
     play($rules, $userName);

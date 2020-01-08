@@ -12,13 +12,13 @@ function getRandomNumber($max = 10)
     return rand(1, $max);
 }
 
-function makeQuestion($question)
+function createQuestion($question)
 {
     line('Question: %s', $question);
     return prompt('Your answer ');
 }
 
-function makeResponse($question, $answer): array
+function createResponse($question, $answer): array
 {
     return [
         'question'    => $question,
@@ -29,7 +29,7 @@ function makeResponse($question, $answer): array
 function play($rules, $userName)
 {
     $doStep = function ($rules) {
-        $userAnswer = makeQuestion($rules['question']);
+        $userAnswer = createQuestion($rules['question']);
         $rules['userAnswer'] = $userAnswer;
         return $rules;
     };

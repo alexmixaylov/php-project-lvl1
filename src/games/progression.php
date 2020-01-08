@@ -3,7 +3,7 @@
 namespace BrainGames\games\progression;
 
 use function BrainGames\common\getRandomNumber;
-use function BrainGames\common\makeResponse;
+use function BrainGames\common\createResponse;
 use function BrainGames\common\play;
 
 function run($userName)
@@ -17,7 +17,7 @@ function run($userName)
         $question    = createQuestion($progression, $hiddenElementIndex);
         $rightAnswer      = $progression[$hiddenElementIndex];
 
-        return makeResponse($question, $rightAnswer);
+        return createResponse($question, $rightAnswer);
     };
 
     play($rules, $userName);
