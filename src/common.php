@@ -15,14 +15,7 @@ function getRandomNumber($max = 10)
 function makeQuestion($question)
 {
     line('Question: %s', $question);
-
     return prompt('Your answer ');
-}
-
-function gameOver($userName, $userAnswer, $rightAnswer)
-{
-    line("'%s' is wrong answer ;(. Correct answer was '%s'.", $userAnswer, $rightAnswer);
-    line("Let's try again, %s!", $userName);
 }
 
 function makeResponse($question, $answer): array
@@ -50,7 +43,8 @@ function play($rules, $userName)
         $rightAnswer = $getStepResult['rightAnswer'];
 
         if ($userAnswer !== $rightAnswer) {
-            gameOver($userName, $userAnswer, $rightAnswer);
+            line("'%s' is wrong answer ;(. Correct answer was '%s'.", $userAnswer, $rightAnswer);
+            line("Let's try again, %s!", $userName);
             $nextStep = false;
         }
         $count++;
