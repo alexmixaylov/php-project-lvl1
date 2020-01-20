@@ -13,8 +13,7 @@
   ],
   "scripts": {
     "phpcs": "phpcs -- --standard=PSR12 src bin",
-    "phpunit": "phpunit",
-    "test": "phpunit tests/games/calcTest.php"
+    "phpunit": "phpunit  tests/games/calcTest.php"
   },
   "require": {
     "wp-cli/php-cli-tools": "^0.11.11"
