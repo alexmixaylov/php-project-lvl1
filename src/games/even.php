@@ -2,8 +2,16 @@
 
 namespace BrainGames\games\even;
 
+use function BrainGames\greeting\greetAndReturnName;
 use function BrainGames\common\createResponse;
 use function BrainGames\common\play;
+
+function init()
+{
+    $userName = greetAndReturnName('Answer "yes" if the number is even, otherwise answer "no".');
+    run($userName);
+    return false;
+}
 
 function run($userName)
 {

@@ -3,7 +3,4 @@
 <?php
 require_once '__DIR__/../vendor/autoload.php';
 
-$game = 'even';
-$gameDescription = 'Answer "yes" if the number is even, otherwise answer "no".';
-
-BrainGames\greeting\init($game, $gameDescription);
+BrainGames\games\even\init();

@@ -4,6 +4,14 @@ namespace BrainGames\games\calc;
 
 use function BrainGames\common\createResponse;
 use function BrainGames\common\play;
+use function BrainGames\greeting\greetAndReturnName;
+
+function init()
+{
+    $userName = greetAndReturnName('What is the result of the expression?');
+    run($userName);
+    return false;
+}
 
 function run($userName)
 {

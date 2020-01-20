@@ -5,7 +5,7 @@ namespace BrainGames\greeting;
 use function cli\line;
 use function cli\prompt;
 
-function init($game, $gameDescription)
+function greetAndReturnName($gameDescription)
 {
     line('Welcome to Brain Games!');
     line($gameDescription);
@@ -13,6 +13,5 @@ function init($game, $gameDescription)
     $name = prompt("\nMay I have your name?");
     line("Hello, %s!\n", $name);
 
-    $runGame = "\\BrainGames\\games\\{$game}\\run";
-    $runGame($name);
+    return $name;
 }

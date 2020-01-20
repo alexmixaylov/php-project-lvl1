@@ -2,8 +2,16 @@
 
 namespace BrainGames\games\progression;
 
+use function BrainGames\greeting\greetAndReturnName;
 use function BrainGames\common\createResponse;
 use function BrainGames\common\play;
+
+function init()
+{
+    $userName = greetAndReturnName('What number is missing in the progression?');
+    run($userName);
+    return false;
+}
 
 function run($userName)
 {

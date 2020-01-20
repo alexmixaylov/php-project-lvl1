@@ -1,9 +1,6 @@
 #! /usr/bin/env php
 
 <?php
-
 require_once '__DIR__/../vendor/autoload.php';
-$game = 'prime';
-$gameDescription = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-BrainGames\greeting\init($game, $gameDescription);
+BrainGames\games\prime\init();

@@ -2,8 +2,16 @@
 
 namespace BrainGames\games\gcd;
 
+use function BrainGames\greeting\greetAndReturnName;
 use function BrainGames\common\createResponse;
 use function BrainGames\common\play;
+
+function init()
+{
+    $userName = greetAndReturnName('Find the greatest common divisor of given numbers.');
+    run($userName);
+    return false;
+}
 
 function run($userName)
 {

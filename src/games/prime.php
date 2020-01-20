@@ -2,9 +2,16 @@
 
 namespace BrainGames\games\prime;
 
+use function BrainGames\greeting\greetAndReturnName;
 use function BrainGames\common\createResponse;
 use function BrainGames\common\play;
 
+function init()
+{
+    $userName = greetAndReturnName('Answer "yes" if given number is prime. Otherwise answer "no".');
+    run($userName);
+    return false;
+}
 function run($userName)
 {
     $initRules = function () {
