@@ -2,38 +2,37 @@
 
 namespace BrainGames\games\progression;
 
-use function BrainGames\common\getRandomNumber;
 use function BrainGames\common\createResponse;
 use function BrainGames\common\play;
 
 function run($userName)
 {
-    $rules = function () {
-        $diffProgression    = getRandomNumber(5);
+    $initRules = function () {
+        $beginProgression   = rand(1, 10);
+        $diffProgression    = rand(1, 5);
         $lengthProgression  = 10;
-        $hiddenElementIndex = getRandomNumber() - 1;
+        $hiddenElementIndex = rand(1, 10) - 1;
 
-        $progression = createProgression($diffProgression, $lengthProgression);
+        $progression = createProgression($beginProgression, $diffProgression, $lengthProgression);
         $question    = createQuestion($progression, $hiddenElementIndex);
-        $rightAnswer      = $progression[$hiddenElementIndex];
+        $rightAnswer = $progression[$hiddenElementIndex];
 
         return createResponse($question, $rightAnswer);
     };
 
-    play($rules, $userName);
+    play($initRules, $userName);
 }
 
-function createProgression(int $diff, int $length): array
+function createProgression(int $begin, int $diff, int $length): array
 {
     $result = [];
-    $item   = getRandomNumber(10);
-    $index  = 0;
-
-    do {
-        $item           = $item + $diff;
-        $result[$index] = $item;
-        $index++;
-    } while ($index < $length);
+    for ($i = 0; $i < $length; $i++) {
+        if ($i > 0) {
+            $result[$i] = $result[$i - 1] + $diff;
+        } else {
+            $result[$i] = $begin;
+        }
+    }
 
     return $result;
 }

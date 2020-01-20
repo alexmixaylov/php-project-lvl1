@@ -2,19 +2,18 @@
 
 namespace BrainGames\games\even;
 
-use function BrainGames\common\getRandomNumber;
 use function BrainGames\common\createResponse;
 use function BrainGames\common\play;
 
 function run($userName)
 {
-    $rules = function () {
-        $question = getRandomNumber();
+    $initRules = function () {
+        $question = rand(1, 10);
         $rightAnswer = isEven($question) ? 'yes' : 'no';
 
         return createResponse($question, $rightAnswer);
     };
-    play($rules, $userName);
+    play($initRules, $userName);
 }
 
 function isEven(int $number)

@@ -2,15 +2,14 @@
 
 namespace BrainGames\games\gcd;
 
-use function BrainGames\common\getRandomNumber;
 use function BrainGames\common\createResponse;
 use function BrainGames\common\play;
 
 function run($userName)
 {
-    $rules = function () {
-        $number1  = getRandomNumber(10);
-        $number2  = getRandomNumber(20);
+    $initRules = function () {
+        $number1  = rand(1, 10);
+        $number2  = rand(1, 20);
         $question = "{$number1} {$number2}";
 
         $rightAnswer = nodCalc($number1, $number2);
@@ -18,7 +17,7 @@ function run($userName)
         return createResponse($question, $rightAnswer);
     };
 
-    play($rules, $userName);
+    play($initRules, $userName);
 }
 
 function nodCalc($x, $y)

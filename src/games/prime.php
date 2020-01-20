@@ -2,19 +2,18 @@
 
 namespace BrainGames\games\prime;
 
-use function BrainGames\common\getRandomNumber;
 use function BrainGames\common\createResponse;
 use function BrainGames\common\play;
 
 function run($userName)
 {
-    $rules = function () {
-        $question = getRandomNumber(13);
+    $initRules = function () {
+        $question = rand(1, 13);
         $rightAnswer   = isPrime($question) ? 'yes' : 'no';
 
         return createResponse($question, $rightAnswer);
     };
-    play($rules, $userName);
+    play($initRules, $userName);
 }
 
 function isPrime($num)

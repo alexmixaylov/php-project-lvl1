@@ -7,11 +7,6 @@ use function cli\prompt;
 
 const TIMES_TO_WIN = 3;
 
-function getRandomNumber($max = 10)
-{
-    return rand(1, $max);
-}
-
 function createQuestion($question)
 {
     line('Question: %s', $question);

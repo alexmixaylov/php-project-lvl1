@@ -21,8 +21,11 @@
     "squizlabs/php_codesniffer": "^3.5"
   },
   "bin": [
-    "bin/brain-games",
-    "bin/brain-even"
+    "bin/brain-calc",
+    "bin/brain-even",
+    "bin/brain-gcd",
+    "bin/brain-prime",
+    "bin/brain-progression"
   ],
   "autoload": {
     "files": [
