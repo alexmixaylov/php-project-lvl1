@@ -1,4 +1,9 @@
 language: php
 php:
   - '7.2'
-script: composer phpunit
+script:
+  - vendor/bin/phpunit
+  - composer phpunit
+
+
+
