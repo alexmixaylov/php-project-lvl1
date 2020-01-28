@@ -3,7 +3,7 @@
 namespace BrainGames\games\even;
 
 use function BrainGames\greeting\greetAndReturnName;
-use function BrainGames\common\createResponse;
+use function BrainGames\common\calcRightAnswer;
 use function BrainGames\common\play;
 
 function init()
@@ -19,7 +19,7 @@ function run($userName)
         $question = rand(1, 10);
         $rightAnswer = isEven($question) ? 'yes' : 'no';
 
-        return createResponse($question, $rightAnswer);
+        return calcRightAnswer($question, $rightAnswer);
     };
     play($initRules, $userName);
 }

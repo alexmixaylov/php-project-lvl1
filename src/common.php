@@ -13,7 +13,7 @@ function createQuestion($question)
     return prompt('Your answer ');
 }
 
-function createResponse($question, $answer): array
+function calcRightAnswer($question, $answer): array
 {
     return [
         'question'    => $question,

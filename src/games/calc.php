@@ -2,7 +2,7 @@
 
 namespace BrainGames\games\calc;
 
-use function BrainGames\common\createResponse;
+use function BrainGames\common\calcRightAnswer;
 use function BrainGames\common\play;
 use function BrainGames\greeting\greetAndReturnName;
 
@@ -23,7 +23,7 @@ function run($userName)
         $question    = "{$operand1} {$operator} {$operand2}";
         $rightAnswer = calcExpression($operator, $operand1, $operand2);
 
-        return createResponse($question, $rightAnswer);
+        return calcRightAnswer($question, $rightAnswer);
     };
     play($initRules, $userName);
 }

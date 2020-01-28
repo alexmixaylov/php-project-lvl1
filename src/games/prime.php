@@ -3,7 +3,7 @@
 namespace BrainGames\games\prime;
 
 use function BrainGames\greeting\greetAndReturnName;
-use function BrainGames\common\createResponse;
+use function BrainGames\common\calcRightAnswer;
 use function BrainGames\common\play;
 
 function init()
@@ -18,7 +18,7 @@ function run($userName)
         $question = rand(1, 13);
         $rightAnswer   = isPrime($question) ? 'yes' : 'no';
 
-        return createResponse($question, $rightAnswer);
+        return calcRightAnswer($question, $rightAnswer);
     };
     play($initRules, $userName);
 }

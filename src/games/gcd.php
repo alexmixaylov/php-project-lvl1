@@ -3,7 +3,7 @@
 namespace BrainGames\games\gcd;
 
 use function BrainGames\greeting\greetAndReturnName;
-use function BrainGames\common\createResponse;
+use function BrainGames\common\calcRightAnswer;
 use function BrainGames\common\play;
 
 function init()
@@ -22,7 +22,7 @@ function run($userName)
 
         $rightAnswer = nodCalc($number1, $number2);
 
-        return createResponse($question, $rightAnswer);
+        return calcRightAnswer($question, $rightAnswer);
     };
 
     play($initRules, $userName);
