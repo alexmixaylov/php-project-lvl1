@@ -2,7 +2,7 @@ language: php
 php:
   - '7.2'
 script:
-  - vendor/phpunit/phpunit
+  - vendor/phpunit/phpunit/phpunit
   - composer phpunit
 
 
