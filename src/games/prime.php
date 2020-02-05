@@ -2,25 +2,21 @@
 
 namespace BrainGames\games\prime;
 
-use function BrainGames\greeting\greetAndReturnName;
 use function BrainGames\common\calcRightAnswer;
 use function BrainGames\common\play;
 
 function init()
 {
-    $userName = greetAndReturnName('Answer "yes" if given number is prime. Otherwise answer "no".');
-    run($userName);
-    return false;
-}
-function run($userName)
-{
-    $initRules = function () {
-        $question = rand(1, 13);
-        $rightAnswer   = isPrime($question) ? 'yes' : 'no';
+    $gameDescription = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
+    $rules = function () {
+        $question    = rand(1, 13);
+        $rightAnswer = isPrime($question) ? 'yes' : 'no';
 
         return calcRightAnswer($question, $rightAnswer);
     };
-    play($initRules, $userName);
+
+    play($gameDescription, $rules);
 }
 
 function isPrime($num)

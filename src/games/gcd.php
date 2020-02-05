@@ -2,20 +2,14 @@
 
 namespace BrainGames\games\gcd;
 
-use function BrainGames\greeting\greetAndReturnName;
 use function BrainGames\common\calcRightAnswer;
 use function BrainGames\common\play;
 
 function init()
 {
-    $userName = greetAndReturnName('Find the greatest common divisor of given numbers.');
-    run($userName);
-    return false;
-}
+    $gameDescription =  'Find the greatest common divisor of given numbers.';
 
-function run($userName)
-{
-    $initRules = function () {
+    $rules = function () {
         $number1  = rand(1, 10);
         $number2  = rand(1, 20);
         $question = "{$number1} {$number2}";
@@ -25,7 +19,7 @@ function run($userName)
         return calcRightAnswer($question, $rightAnswer);
     };
 
-    play($initRules, $userName);
+    play($gameDescription, $rules);
 }
 
 function nodCalc($x, $y)

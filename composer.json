@@ -12,7 +12,7 @@
     }
   ],
   "scripts": {
-    "phpcs": "phpcs",
+    "phpcs": "phpcs -- --standard=PSR12 src bin",
     "phpunit": "phpunit  tests/games/calcTest.php"
   },
   "require": {
@@ -32,7 +32,6 @@
   "autoload": {
     "files": [
       "src/common.php",
-      "src/greeting.php",
       "src/games/even.php",
       "src/games/calc.php",
       "src/games/gcd.php",

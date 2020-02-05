@@ -2,26 +2,21 @@
 
 namespace BrainGames\games\even;
 
-use function BrainGames\greeting\greetAndReturnName;
 use function BrainGames\common\calcRightAnswer;
 use function BrainGames\common\play;
 
 function init()
 {
-    $userName = greetAndReturnName('Answer "yes" if the number is even, otherwise answer "no".');
-    run($userName);
-    return false;
-}
+    $gameDescription = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-function run($userName)
-{
-    $initRules = function () {
-        $question = rand(1, 10);
+    $rules = function () {
+        $question    = rand(1, 10);
         $rightAnswer = isEven($question) ? 'yes' : 'no';
 
         return calcRightAnswer($question, $rightAnswer);
     };
-    play($initRules, $userName);
+
+    play($gameDescription, $rules);
 }
 
 function isEven(int $number)

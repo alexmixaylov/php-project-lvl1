@@ -4,18 +4,11 @@ namespace BrainGames\games\calc;
 
 use function BrainGames\common\calcRightAnswer;
 use function BrainGames\common\play;
-use function BrainGames\greeting\greetAndReturnName;
 
 function init()
 {
-    $userName = greetAndReturnName('What is the result of the expression?');
-    run($userName);
-    return false;
-}
-
-function run($userName)
-{
-    $initRules = function () {
+    $gameDescription = 'What is the result of the expression?';
+    $rules = function () {
         $operators   = ['+', '-', '*'];
         $operator    = $operators[rand(0, count($operators) - 1)];
         $operand1    = rand(1, 10);
@@ -25,18 +18,9 @@ function run($userName)
 
         return calcRightAnswer($question, $rightAnswer);
     };
-    play($initRules, $userName);
+    play($gameDescription, $rules);
 }
 
-/**
- * Calculate Expression
- *
- * @param string $operator
- * @param int $operand1
- * @param int $operand2
- *
- * @return int
- */
 function calcExpression($operator, $operand1, $operand2): int
 {
     $result = 0;
