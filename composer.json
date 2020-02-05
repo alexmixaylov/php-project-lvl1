@@ -12,7 +12,7 @@
     }
   ],
   "scripts": {
-    "phpcs": "phpcs -- --standard=PSR12 src bin",
+    "phpcs": "phpcs --standard=PSR12 src bin",
     "phpunit": "phpunit  tests/games/calcTest.php"
   },
   "require": {
