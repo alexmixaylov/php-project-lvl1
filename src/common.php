@@ -21,6 +21,7 @@ function greetAndReturnName($gameDescription)
 function createQuestion($question)
 {
     line('Question: %s', $question);
+
     return prompt('Your answer ');
 }
 
@@ -28,16 +29,18 @@ function calcRightAnswer($question, $answer): array
 {
     return [
         'question'    => $question,
-        'rightAnswer' => (string)$answer
+        'rightAnswer' => (string)$answer,
+        'userAnswer'  => ''
     ];
 }
 
 function play($gameDescription, $rules)
 {
     $userName = greetAndReturnName($gameDescription);
-    $doStep = function ($rules) {
-        $userAnswer = createQuestion($rules['question']);
+    $doStep   = function ($rules) {
+        $userAnswer          = createQuestion($rules['question']);
         $rules['userAnswer'] = $userAnswer;
+
         return $rules;
     };
 
@@ -46,8 +49,8 @@ function play($gameDescription, $rules)
 
     do {
         $getStepResult = $doStep($rules());
-        $userAnswer  = $getStepResult['userAnswer'];
-        $rightAnswer = $getStepResult['rightAnswer'];
+        $userAnswer    = $getStepResult['userAnswer'];
+        $rightAnswer   = $getStepResult['rightAnswer'];
 
         if ($userAnswer !== $rightAnswer) {
             line("'%s' is wrong answer ;(. Correct answer was '%s'.", $userAnswer, $rightAnswer);
