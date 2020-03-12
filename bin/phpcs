@@ -1,9 +1,13 @@
 #!/usr/bin/env php
 <?php
+
+print_r(scandir(__DIR__.'/../'));
+die();
+
 if (is_file(__DIR__.'/../autoload.php') === true) {
     include_once __DIR__.'/../autoload.php';
 } else {
-    include_once __DIR__.'/../squizlabs/php_codesniffer/autoload.php';
+    include_once 'PHP/CodeSniffer/autoload.php';
 }
 
 $runner   = new PHP_CodeSniffer\Runner();
