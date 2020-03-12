@@ -2,4 +2,4 @@ install:
 	composer install
 
 lint:
-	bin/phpcs src
+	composer run-script phpcs -- --standard=PSR12 src bin

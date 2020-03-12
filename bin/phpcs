@@ -1,7 +1,0 @@
-#!/usr/bin/env php
-<?php
-require_once '__DIR__/../vendor/autoload.php';
-
-$runner   = new PHP_CodeSniffer\Runner();
-$exitCode = $runner->runPHPCS();
-exit($exitCode);
