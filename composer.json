@@ -37,8 +37,14 @@
       "src/games/calc.php",
       "src/games/gcd.php",
       "src/games/progression.php",
-      "src/games/prime.php",
-      "vendor/squizlabs/php_codesniffer/autoload.php"
+      "src/games/prime.php"
+
     ]
-  }
+  },
+  "repositories": [
+    {
+      "type": "path",
+      "url": "vendor/squizlabs/php_codesniffer/autoload.php"
+    }
+  ]
 }
