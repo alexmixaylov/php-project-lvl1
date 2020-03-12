@@ -38,7 +38,7 @@
       "src/games/gcd.php",
       "src/games/progression.php",
       "src/games/prime.php",
-      "vendor/squizlabs/php_codesniffer/autoload.php"
+      "squizlabs/php_codesniffer/autoload.php"
     ]
   }
 }
