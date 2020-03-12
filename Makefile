@@ -2,4 +2,4 @@ install:
 	composer install
 
 lint:
-	 composer run phpcs
+	 bin/phpcs
