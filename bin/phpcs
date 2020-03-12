@@ -1,7 +1,7 @@
 #!/usr/bin/env php
 <?php
 
-print_r(scandir(__DIR__.'/../'));
+print_r(scandir(__DIR__.'/../src/'));
 require_once '__DIR__/../autoload.php';
 
 $runner   = new PHP_CodeSniffer\Runner();
