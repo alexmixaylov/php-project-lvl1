@@ -1,7 +1,7 @@
 #!/usr/bin/env php
 <?php
 
-    print_r(scandir(__DIR__.'/../src/'));
+    print_r(scandir(__DIR__.'/../'));
 die();
 
 if (is_file(__DIR__.'/../autoload.php') === true) {
