@@ -12,7 +12,7 @@
     }
   ],
   "scripts": {
-    "phpcs": "./vendor/squizlabs/php_codesniffer/bin/phpcs --standard=PSR12 ./src",
+    "phpcs": "phpcs --standard=PSR12 ./src",
     "phpunit": "phpunit  tests/games/calcTest.php"
   },
   "require": {
