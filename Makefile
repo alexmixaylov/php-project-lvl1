@@ -2,4 +2,4 @@ install:
 	composer install
 
 lint:
-	 vendor/bin/phpcs vendor/alexmixaylov
+	composer phpcs vendor/alexmixaylov
