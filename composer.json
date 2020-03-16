@@ -1,6 +1,7 @@
 {
   "name": "alexmixaylov/hexlet-p",
   "description": "First project by Hexlet",
+  "license": "MIT",
   "keywords": [
     "hexlet project",
     "training php hexlet project"

@@ -45,18 +45,13 @@ function play($gameDescription, $gameParams)
         if ($rightAnswer == $userAnswer) {
             continue;
         } else {
-            failStep($userName, $userAnswer, $rightAnswer);
+            showFailResult($userName, $userAnswer, $rightAnswer);
             break;
         }
     }
 }
 
-function passStep()
-{
-
-}
-
-function failStep($userName, $userAnswer, $rightAnswer)
+function showFailResult($userName, $userAnswer, $rightAnswer)
 {
     line("'%s' is wrong answer ;(. Correct answer was '%s'.", $userAnswer, $rightAnswer);
     line("Let's try again, %s!", $userName);

@@ -21,19 +21,19 @@ function init()
 
 function isPrime($num)
 {
-    $minPrimeNumber = 2;
-    $maxPrimeNumber = $num / 2;
+    define('MIN_PRIME_NUMBER', 2);
+    $maxValue = $num / 2;
 
-    if ($num === $minPrimeNumber) {
+    if ($num === MIN_PRIME_NUMBER) {
         return true;
     }
 
-    if ($num % 2 == 0 || $num < $minPrimeNumber) {
+    if ($num % 2 == 0 || $num < MIN_PRIME_NUMBER) {
         return false;
     }
 
-    for ($d = $minPrimeNumber + 1, $period = 2; $d < $maxPrimeNumber; $d = $d + $period) {
-        if ($num % $d == 0) {
+    for ($divider = MIN_PRIME_NUMBER + 1, $period = 2; $divider < $maxValue; $divider = $divider + $period) {
+        if ($num % $divider == 0) {
             return false;
         }
     }
