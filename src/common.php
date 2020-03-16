@@ -7,11 +7,14 @@ use function cli\prompt;
 
 const TIMES_TO_WIN = 3;
 
-function greetAndReturnName($gameDescription)
+function greetUser($gameDescription)
 {
     line('Welcome to Brain Games!');
     line($gameDescription);
+}
 
+function askUserName()
+{
     $name = prompt("\nMay I have your name?");
     line("Hello, %s!\n", $name);
 
@@ -36,7 +39,8 @@ function calcRightAnswer($question, $answer): array
 
 function play($gameDescription, $rules)
 {
-    $userName = greetAndReturnName($gameDescription);
+    greetUser($gameDescription);
+    $userName = askUserName();
     $doStep   = function ($rules) {
         $userAnswer          = createQuestion($rules['question']);
         $rules['userAnswer'] = $userAnswer;

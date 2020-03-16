@@ -14,7 +14,7 @@ function init()
         $number2  = rand(1, 20);
         $question = "{$number1} {$number2}";
 
-        $rightAnswer = nodCalc($number1, $number2);
+        $rightAnswer = calcMaxDivisor($number1, $number2);
 
         return calcRightAnswer($question, $rightAnswer);
     };
@@ -22,13 +22,13 @@ function init()
     play($gameDescription, $rules);
 }
 
-function nodCalc($x, $y)
+function calcMaxDivisor($x, $y)
 {
     if ($x > $y) {
-        return nodCalc(($x - $y), $y);
+        return calcMaxDivisor(($x - $y), $y);
     }
     if ($x < $y) {
-        return nodCalc(($y - $x), $x);
+        return calcMaxDivisor(($y - $x), $x);
     }
     return $x;
 }

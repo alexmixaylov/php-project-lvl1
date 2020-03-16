@@ -13,15 +13,15 @@ function init()
         $beginProgression   = rand(1, 10);
         $diffProgression    = rand(1, 5);
         $lengthProgression  = 10;
-        $hiddenElementIndex = rand(1, $lengthProgression) - 1;
+        $indexHiddenElement = rand(0, $lengthProgression - 1);
 
         $progression = createProgression(
             $beginProgression,
             $diffProgression,
             $lengthProgression
         );
-        $question    = createQuestion($progression, $hiddenElementIndex);
-        $rightAnswer = $progression[$hiddenElementIndex];
+        $question    = createQuestion($progression, $indexHiddenElement);
+        $rightAnswer = $progression[$indexHiddenElement];
 
         return calcRightAnswer($question, $rightAnswer);
     };
@@ -41,9 +41,7 @@ function createProgression(int $begin, int $diff, int $length): array
 
 function createQuestion(array $progression, int $index): string
 {
-    $placeholderLength   = strlen((string)$progression[$index]);
-    $placeholder         = str_repeat('.', $placeholderLength);
-    $progression[$index] = $placeholder;
+    $progression[$index] = '.';
 
     return implode($progression, ' ');
 }
