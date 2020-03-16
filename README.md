@@ -4,30 +4,29 @@
 * * *
 This repository is created like first educational project by Hexlet.
 
-
 ## Install
 
 Run command `composer require alexmixaylov/hexlet-p`
 
----------
-[![asciicast](https://asciinema.org/a/8zKic30vakA9WOhWVUA07Ov8P.svg)](https://asciinema.org/a/8zKic30vakA9WOhWVUA07Ov8P)
+## Play
+Run a binary file lying in the bin directory to start the game
 
 Brain Even
 ---------
-[![asciicast](https://asciinema.org/a/5QFsEGgXc7RPMaKU9dEpU4UXp.svg)](https://asciinema.org/a/5QFsEGgXc7RPMaKU9dEpU4UXp)
+[![asciicast](https://asciinema.org/a/sCel4fNiljqagH63AHKu9C1ex.svg)](https://asciinema.org/a/sCel4fNiljqagH63AHKu9C1ex)
 
 Brain Calc
 ---------
-[![asciicast](https://asciinema.org/a/qQWMMnr03ET1ueZvamf2cwLKi.svg)](https://asciinema.org/a/qQWMMnr03ET1ueZvamf2cwLKi)
+[![asciicast](https://asciinema.org/a/N4F0mN9PYmBF4wxLVaJAV973g.svg)](https://asciinema.org/a/N4F0mN9PYmBF4wxLVaJAV973g)
 
 Brain GCD
 ---------
-[![asciicast](https://asciinema.org/a/JYIwwWyTpv3VxeEwG69OsgksL.svg)](https://asciinema.org/a/JYIwwWyTpv3VxeEwG69OsgksL)
+[![asciicast](https://asciinema.org/a/cevseeAwbFU75s8ruCRWXVdqs.svg)](https://asciinema.org/a/cevseeAwbFU75s8ruCRWXVdqs)
 
 Brain Progression
 ----------
-[![asciicast](https://asciinema.org/a/YfoNcWicrXxnY2d3CA57WA4hL.svg)](https://asciinema.org/a/YfoNcWicrXxnY2d3CA57WA4hL)
+[![asciicast](https://asciinema.org/a/c0uRDQChiccKSYDzOV09DoY4K.svg)](https://asciinema.org/a/c0uRDQChiccKSYDzOV09DoY4K)
 
 Brain Prime
 ----------
-[![asciicast](https://asciinema.org/a/ZlpeNWUyGMxdXdqsGDOZIjuxs.svg)](https://asciinema.org/a/ZlpeNWUyGMxdXdqsGDOZIjuxs)
+[![asciicast](https://asciinema.org/a/f3iqFU0sS7mwnEtcTgiPnNb55.svg)](https://asciinema.org/a/f3iqFU0sS7mwnEtcTgiPnNb55)
