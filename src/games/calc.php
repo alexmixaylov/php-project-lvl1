@@ -2,7 +2,6 @@
 
 namespace BrainGames\games\calc;
 
-use function BrainGames\common\calcRightAnswer;
 use function BrainGames\common\play;
 
 function init()

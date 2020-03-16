@@ -2,7 +2,6 @@
 
 namespace BrainGames\games\even;
 
-use function BrainGames\common\calcRightAnswer;
 use function BrainGames\common\play;
 
 function init()
