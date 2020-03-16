@@ -8,7 +8,7 @@ use function BrainGames\common\play;
 function init()
 {
     $gameDescription = 'What is the result of the expression?';
-    $rules           = function () {
+    $initGameParams           = function () {
         $operators   = ['+', '-', '*'];
         $operator    = array_rand(array_flip($operators), 1);
         $operand1    = rand(1, 10);
@@ -16,9 +16,9 @@ function init()
         $question    = "{$operand1} {$operator} {$operand2}";
         $rightAnswer = calcExpression($operator, $operand1, $operand2);
 
-        return calcRightAnswer($question, $rightAnswer);
+        return [$question, $rightAnswer];
     };
-    play($gameDescription, $rules);
+    play($gameDescription, $initGameParams);
 }
 
 function calcExpression($operator, $operand1, $operand2): int

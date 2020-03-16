@@ -9,14 +9,14 @@ function init()
 {
     $gameDescription = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-    $rules = function () {
+    $initGameParams = function () {
         $question    = rand(1, 10);
         $rightAnswer = isEven($question) ? 'yes' : 'no';
 
-        return calcRightAnswer($question, $rightAnswer);
+        return [$question, $rightAnswer];
     };
 
-    play($gameDescription, $rules);
+    play($gameDescription, $initGameParams);
 }
 
 function isEven(int $number)

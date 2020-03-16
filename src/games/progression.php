@@ -9,7 +9,7 @@ function init()
 {
     $gameDescription = 'What number is missing in the progression?';
 
-    $rules = function () {
+    $initGameParams = function () {
         $beginProgression   = rand(1, 10);
         $diffProgression    = rand(1, 5);
         $lengthProgression  = 10;
@@ -23,10 +23,10 @@ function init()
         $question    = createQuestion($progression, $indexHiddenElement);
         $rightAnswer = $progression[$indexHiddenElement];
 
-        return calcRightAnswer($question, $rightAnswer);
+        return [$question, $rightAnswer];
     };
 
-    play($gameDescription, $rules);
+    play($gameDescription, $initGameParams);
 }
 
 function createProgression(int $begin, int $diff, int $length): array

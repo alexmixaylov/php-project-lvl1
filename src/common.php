@@ -28,43 +28,36 @@ function createQuestion($question)
     return prompt('Your answer ');
 }
 
-function calcRightAnswer($question, $answer): array
-{
-    return [
-        'question'    => $question,
-        'rightAnswer' => (string)$answer,
-        'userAnswer'  => ''
-    ];
-}
-
-function play($gameDescription, $rules)
+function play($gameDescription, $gameParams)
 {
     greetUser($gameDescription);
     $userName = askUserName();
-    $doStep   = function ($rules) {
-        $userAnswer          = createQuestion($rules['question']);
-        $rules['userAnswer'] = $userAnswer;
 
-        return $rules;
-    };
-
-    $count    = 0;
-    $nextStep = true;
-
-    do {
-        $getStepResult = $doStep($rules());
-        $userAnswer    = $getStepResult['userAnswer'];
-        $rightAnswer   = $getStepResult['rightAnswer'];
-
-        if ($userAnswer !== $rightAnswer) {
-            line("'%s' is wrong answer ;(. Correct answer was '%s'.", $userAnswer, $rightAnswer);
-            line("Let's try again, %s!", $userName);
-            $nextStep = false;
-        }
-        $count++;
-
-        if ($count == TIMES_TO_WIN && $nextStep) {
+    for ($i = 0; $i <= TIMES_TO_WIN; $i++) {
+        if ($i == TIMES_TO_WIN) {
             line('Congratulations, %s!', $userName);
+            break;
         }
-    } while ($count < TIMES_TO_WIN && $nextStep);
+
+        [$question, $rightAnswer] = $gameParams();
+        $userAnswer = createQuestion($question);
+
+        if ($rightAnswer == $userAnswer) {
+            continue;
+        } else {
+            failStep($userName, $userAnswer, $rightAnswer);
+            break;
+        }
+    }
+}
+
+function passStep()
+{
+
+}
+
+function failStep($userName, $userAnswer, $rightAnswer)
+{
+    line("'%s' is wrong answer ;(. Correct answer was '%s'.", $userAnswer, $rightAnswer);
+    line("Let's try again, %s!", $userName);
 }
