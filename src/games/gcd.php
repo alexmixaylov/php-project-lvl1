@@ -8,7 +8,7 @@ function init()
 {
     $gameDescription =  'Find the greatest common divisor of given numbers.';
 
-    $initGameParams = function () {
+    $generateGameData = function () {
         $number1  = rand(1, 10);
         $number2  = rand(1, 20);
         $question = "{$number1} {$number2}";
@@ -18,7 +18,7 @@ function init()
         return [$question, $rightAnswer];
     };
 
-    play($gameDescription, $initGameParams);
+    play($gameDescription, $generateGameData);
 }
 
 function calcMaxDivisor($x, $y)

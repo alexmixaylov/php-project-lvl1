@@ -8,24 +8,20 @@ function init()
 {
     $gameDescription = 'What number is missing in the progression?';
 
-    $initGameParams = function () {
-        $beginProgression   = rand(1, 10);
-        $diffProgression    = rand(1, 5);
-        $lengthProgression  = 10;
-        $indexHiddenElement = rand(0, $lengthProgression - 1);
+    $generateGameData = function () {
+        $begin   = rand(1, 10);
+        $diff    = rand(1, 5);
+        $length  = 10;
+        $indexHiddenElement = rand(0, $length - 1);
 
-        $progression = createProgression(
-            $beginProgression,
-            $diffProgression,
-            $lengthProgression
-        );
+        $progression = createProgression($begin, $diff, $length);
         $question    = createQuestion($progression, $indexHiddenElement);
         $rightAnswer = $progression[$indexHiddenElement];
 
         return [$question, $rightAnswer];
     };
 
-    play($gameDescription, $initGameParams);
+    play($gameDescription, $generateGameData);
 }
 
 function createProgression(int $begin, int $diff, int $length): array
