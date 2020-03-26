@@ -12,11 +12,11 @@ function init()
         $begin   = rand(1, 10);
         $diff    = rand(1, 5);
         $length  = 10;
-        $indexHiddenElement = rand(0, $length - 1);
+        $hiddenElementIndex = rand(0, $length - 1);
 
         $progression = createProgression($begin, $diff, $length);
-        $question    = createQuestion($progression, $indexHiddenElement);
-        $rightAnswer = $progression[$indexHiddenElement];
+        $question    = createQuestion($progression, $hiddenElementIndex);
+        $rightAnswer = $progression[$hiddenElementIndex];
 
         return [$question, $rightAnswer];
     };
