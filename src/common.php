@@ -7,52 +7,30 @@ use function cli\prompt;
 
 const TIMES_TO_WIN = 3;
 
-function greetUser($gameDescription)
+function play(string $gameDescription, callable $generateGameData)
 {
-    line('Welcome to Brain Games!');
-    line($gameDescription);
-}
+    // initial parameters
+    line("Welcome to Brain Games!\n" . $gameDescription);
+    $userName = prompt("\nMay I have your name?");
+    line("Hello, %s!\n", $userName);
 
-function askUserName()
-{
-    $name = prompt("\nMay I have your name?");
-    line("Hello, %s!\n", $name);
-
-    return $name;
-}
-
-function createQuestion($question)
-{
-    line('Question: %s', $question);
-
-    return prompt('Your answer ');
-}
-
-function play($gameDescription, $gameParams)
-{
-    greetUser($gameDescription);
-    $userName = askUserName();
-
+    // game process
     for ($i = 0; $i <= TIMES_TO_WIN; $i++) {
         if ($i == TIMES_TO_WIN) {
             line('Congratulations, %s!', $userName);
             break;
         }
 
-        [$question, $rightAnswer] = $gameParams();
-        $userAnswer = createQuestion($question);
+        [$question, $rightAnswer] = $generateGameData();
+        line('Question: %s', $question);
+        $userAnswer = prompt('Your answer ');
 
         if ($rightAnswer == $userAnswer) {
             continue;
-        } else {
-            showFailResult($userName, $userAnswer, $rightAnswer);
-            break;
         }
-    }
-}
 
-function showFailResult($userName, $userAnswer, $rightAnswer)
-{
-    line("'%s' is wrong answer ;(. Correct answer was '%s'.", $userAnswer, $rightAnswer);
-    line("Let's try again, %s!", $userName);
+        line("'%s' is wrong answer ;(. Correct answer was '%s'.", $userAnswer, $rightAnswer);
+        line("Let's try again, %s!", $userName);
+        break;
+    }
 }
