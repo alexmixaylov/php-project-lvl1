@@ -2,7 +2,7 @@
 
 namespace BrainGames\games\progression;
 
-use function BrainGames\common\play;
+use function BrainGames\engine\play;
 
 function init()
 {

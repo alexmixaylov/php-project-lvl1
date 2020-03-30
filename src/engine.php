@@ -1,6 +1,6 @@
 <?php
 
-namespace BrainGames\common;
+namespace BrainGames\engine;
 
 use function cli\line;
 use function cli\prompt;
@@ -10,7 +10,8 @@ const TIMES_TO_WIN = 3;
 function play(string $gameDescription, callable $generateGameData)
 {
     // initial parameters
-    line("Welcome to Brain Games!\n" . $gameDescription);
+    line("Welcome to Brain Games!" );
+    line($gameDescription);
     $userName = prompt("\nMay I have your name?");
     line("Hello, %s!\n", $userName);
 

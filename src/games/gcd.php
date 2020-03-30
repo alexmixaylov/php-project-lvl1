@@ -2,7 +2,7 @@
 
 namespace BrainGames\games\gcd;
 
-use function BrainGames\common\play;
+use function BrainGames\engine\play;
 
 function init()
 {
@@ -13,7 +13,7 @@ function init()
         $number2  = rand(1, 20);
         $question = "{$number1} {$number2}";
 
-        $rightAnswer = calcMaxDivisor($number1, $number2);
+        $rightAnswer = calcGcd($number1, $number2);
 
         return [$question, $rightAnswer];
     };
@@ -21,7 +21,7 @@ function init()
     play($gameDescription, $generateGameData);
 }
 
-function calcMaxDivisor($x, $y)
+function calcGcd($x, $y)
 {
     if ($x > $y) {
         return calcMaxDivisor(($x - $y), $y);

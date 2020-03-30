@@ -2,7 +2,7 @@
 
 namespace BrainGames\games\calc;
 
-use function BrainGames\common\play;
+use function BrainGames\engine\play;
 
 function init()
 {
@@ -17,6 +17,7 @@ function init()
 
         return [$question, $rightAnswer];
     };
+
     play($gameDescription, $generateGameData);
 }
 

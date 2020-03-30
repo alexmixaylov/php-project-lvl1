@@ -2,9 +2,7 @@
 
 namespace BrainGames\games\prime;
 
-use function BrainGames\common\play;
-
-define('MIN_PRIME_NUMBER', 2);
+use function BrainGames\engine\play;
 
 function init()
 {
@@ -22,6 +20,7 @@ function init()
 
 function isPrime($num)
 {
+    define('MIN_PRIME_NUMBER', 2);
     $maxValue = $num / 2;
 
     if ($num === MIN_PRIME_NUMBER) {

@@ -33,7 +33,7 @@
   ],
   "autoload": {
     "files": [
-      "src/common.php",
+      "src/engine.php",
       "src/games/even.php",
       "src/games/calc.php",
       "src/games/gcd.php",
