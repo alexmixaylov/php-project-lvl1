@@ -24,10 +24,10 @@ function init()
 function calcGcd($x, $y)
 {
     if ($x > $y) {
-        return calcMaxDivisor(($x - $y), $y);
+        return calcGcd(($x - $y), $y);
     }
     if ($x < $y) {
-        return calcMaxDivisor(($y - $x), $x);
+        return calcGcd(($y - $x), $x);
     }
     return $x;
 }
